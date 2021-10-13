@@ -96,7 +96,7 @@ def main():
         elif(op == 5):
             alterarnome(input("Insira o e-mail de um usuário para alterar seu nome "))
 
-if name == "main":
+if __name__ == "__main__":
     main()
 
 print("Lista de usuários: \n",lista)
