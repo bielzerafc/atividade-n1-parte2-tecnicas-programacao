@@ -56,3 +56,47 @@ def alterarnome(email):   #função para a opção 5
             novousuario[1] = novonome
             novousuario = novousuario[0] + " " + novousuario[1] + " " + novousuario[2] + " " + novousuario[3]
             dadoscadastro.append(novousuario)
+def main():
+    op = 0
+    while(op >= 0 and op <= 5):
+        print("Digite 1 para cadastrar um novo usuário")
+        print("Digite 2 para listar novos usuários")
+        print("Digite 3 para buscar um usuário a partir de seu nome")
+        print("Digite 4 para remover um usuário cadastrado buscando por seu e-mail.")
+        print("Digite 5 para alterar o nome de um usuário buscando por seu e-mail") 
+        print("Digite 6 para encerrar o programa\n")
+
+        try:
+            op = int(input())
+        except:
+            print("Insira um número de 1 a 6 para prosseguir.")
+            continue
+
+        if(op == 1):
+            cadastrar()
+        elif(op == 2):
+            listagem = 0
+            while listagem <=0 or listagem >=3:
+                print("Digite 1 para listar os usuários em ordem de cadastro")
+                print("Digite 2 para listar os usuários em ordem alfabética")
+
+                listagem = int(input())
+
+                if listagem == 1:
+                    mostrarlista()
+                elif listagem == 2:
+                    mostrarlistaalfa()
+                else:
+                    print("Digite um número válido\n")
+
+        elif(op == 3):
+            buscarusuario(input("Insira o nome de um usuário para buscar seus dados "))
+        elif(op == 4):
+            deletarusuario(input("Insira o e-mail de um usuário para deletá-lo "))
+        elif(op == 5):
+            alterarnome(input("Insira o e-mail de um usuário para alterar seu nome "))
+
+if name == "main":
+    main()
+
+print("Lista de usuários: \n",lista)
